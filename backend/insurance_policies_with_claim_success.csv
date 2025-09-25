@@ -1,0 +1,101 @@
+Policy_No,Name,Vehicle_No,Mobile_No,Address,Accident_Severity,Fire_Risk,Injury_Likelihood,Claim_Authenticity,Claim_Success_Percentage
+1001,Anita Kumar,GJ06YR6737,9490235399,"Indore, Madhya Pradesh",Low,Potential Fire,Low (<20%),Suspicious,29
+1002,Arjun Kumar,RJ07UZ3123,9787159254,"Nagpur, Telangana",Moderate,No Risk,Low (<20%),Authentic,44
+1003,Pooja Deshmukh,MH19DY7879,9416504108,"Bhopal, Maharashtra",Moderate,Confirmed Fire,Low (<20%),Suspicious,46
+1004,Anita Iyer,KA16IP1488,9387377515,"Kochi, Tamil Nadu",Moderate,Potential Fire,High (>60%),Suspicious,59
+1005,Sneha Singh,MH18GV8514,9369243781,"Kolkata, Uttar Pradesh",Moderate,Potential Fire,High (>60%),Suspicious,59
+1006,Pooja Deshmukh,RJ07DS4291,9979590520,"Kolkata, Uttar Pradesh",Moderate,Confirmed Fire,High (>60%),Authentic,81
+1007,Suresh Verma,KL03BG5608,9379722205,"Surat, Karnataka",Moderate,Potential Fire,Low (<20%),Suspicious,38
+1008,Priya Bose,GJ03OB5909,9595705287,"Bangalore, Kerala",Moderate,Potential Fire,Moderate (20-60%),Authentic,82
+1009,Meera Yadav,KA15KO4899,9678455114,"Delhi, Kerala",Severe,Potential Fire,Low (<20%),Authentic,85
+1010,Divya Verma,MP04UF1830,9564166689,"Lucknow, Tamil Nadu",Severe,No Risk,Low (<20%),Suspicious,34
+1011,Vikram Reddy,RJ05WA7297,9985558533,"Bhopal, Tamil Nadu",Moderate,Potential Fire,High (>60%),Authentic,73
+1012,Pooja Patel,MP18AM4098,9310613343,"Kochi, Telangana",Low,No Risk,Moderate (20-60%),Authentic,78
+1013,Priya Kumar,DL17ZS3209,9812329598,"Jaipur, Gujarat",Low,Confirmed Fire,Moderate (20-60%),Authentic,78
+1014,Suresh Yadav,MH11ED4480,9679302426,"Delhi, Kerala",Moderate,No Risk,High (>60%),Authentic,65
+1015,Ravi Joshi,MH01VG2616,9520160620,"Bangalore, Madhya Pradesh",Low,Potential Fire,Moderate (20-60%),Authentic,87
+1016,Anita Singh,RJ04YA4665,9782195123,"Delhi, West Bengal",Low,No Risk,Moderate (20-60%),Authentic,78
+1017,Amit Nair,DL19XJ3390,9389097318,"Delhi, West Bengal",Low,Potential Fire,Moderate (20-60%),Suspicious,88
+1018,Manish Patel,KL07UN4758,9771023252,"Lucknow, Madhya Pradesh",Low,Potential Fire,Low (<20%),Suspicious,29
+1019,Meera Kumar,UP03AB2623,9665125273,"Kochi, Uttar Pradesh",Severe,Confirmed Fire,Moderate (20-60%),Authentic,87
+1020,Ravi Gupta,MH02BD3847,9786849710,"Delhi, Uttar Pradesh",Moderate,Potential Fire,Moderate (20-60%),Authentic,67
+1021,Divya Kumar,MH10NV9194,9854747955,"Ahmedabad, West Bengal",Low,No Risk,Moderate (20-60%),Suspicious,54
+1022,Anita Patel,KA15EE4821,9460446259,"Surat, Gujarat",Moderate,Potential Fire,Moderate (20-60%),Authentic,67
+1023,Amit Deshmukh,MP17KD6284,9299577379,"Lucknow, Rajasthan",Moderate,Confirmed Fire,High (>60%),Suspicious,54
+1024,Neha Verma,WB01UR8172,9542099722,"Surat, Karnataka",Severe,Confirmed Fire,Moderate (20-60%),Authentic,67
+1025,Suresh Deshmukh,MP03CZ6772,9891816807,"Jaipur, Rajasthan",Severe,Confirmed Fire,Moderate (20-60%),Authentic,78
+1026,Pooja Iyer,RJ10LI3371,9993967721,"Mumbai, NCR",Low,Potential Fire,Moderate (20-60%),Suspicious,23
+1027,Vikram Yadav,WB08ZG8190,9190421746,"Mumbai, West Bengal",Severe,Confirmed Fire,Moderate (20-60%),Suspicious,34
+1028,Neha Reddy,KL10AG7766,9514152425,"Jaipur, Rajasthan",Moderate,No Risk,Low (<20%),Authentic,44
+1029,Amit Yadav,MP20DA2312,9685833267,"Nagpur, West Bengal",Moderate,Confirmed Fire,High (>60%),Authentic,81
+1030,Anita Iyer,UP20KT9469,9408597155,"Indore, Kerala",Severe,Confirmed Fire,Low (<20%),Authentic,87
+1031,Priya Iyer,GJ20DG1589,9492396047,"Pune, Telangana",Severe,Potential Fire,Moderate (20-60%),Suspicious,34
+1032,Meera Sharma,KL05XO9073,9813605912,"Bangalore, NCR",Severe,Confirmed Fire,Moderate (20-60%),Authentic,78
+1033,Meera Nair,RJ19JL7101,9155408662,"Bhopal, Gujarat",Severe,No Risk,Low (<20%),Suspicious,34
+1034,Ravi Patel,MP18MZ8212,9248556093,"Nagpur, Tamil Nadu",Low,No Risk,Moderate (20-60%),Suspicious,45
+1035,Meera Gupta,KA12LR2940,9394584119,"Pune, Madhya Pradesh",Severe,Confirmed Fire,Low (<20%),Authentic,96
+1036,Rahul Joshi,UP12MY4403,9313996721,"Delhi, Gujarat",Moderate,No Risk,Low (<20%),Authentic,44
+1037,Rahul Singh,UP20OC5266,9796724961,"Kolkata, Maharashtra",Severe,Confirmed Fire,Moderate (20-60%),Authentic,90
+1038,Priya Joshi,RJ10EU1201,9308506307,"Ahmedabad, Karnataka",Severe,Confirmed Fire,Moderate (20-60%),Suspicious,54
+1039,Amit Yadav,TN14FN3171,9932918940,"Surat, Kerala",Severe,Confirmed Fire,Low (<20%),Suspicious,32
+1040,Priya Deshmukh,KL02ZN6017,9198324281,"Kolkata, Madhya Pradesh",Low,Potential Fire,Moderate (20-60%),Suspicious,33
+1041,Amit Pandey,GJ10KD9207,9580150650,"Indore, Maharashtra",Low,Confirmed Fire,Moderate (20-60%),Authentic,67
+1042,Sneha Reddy,UP07IN7830,9712022579,"Nagpur, Telangana",Low,No Risk,Moderate (20-60%),Suspicious,34
+1043,Sneha Deshmukh,KL01CN3641,9878400540,"Kochi, Telangana",Moderate,No Risk,Low (<20%),Suspicious,30
+1044,Ravi Bose,MP04AU6075,9911605570,"Jaipur, Kerala",Moderate,Potential Fire,High (>60%),Authentic,73
+1045,Anita Gupta,GJ13MB9649,9381272503,"Nagpur, NCR",Moderate,Confirmed Fire,Low (<20%),Suspicious,46
+1046,Priya Singh,MP03LC8009,9913967958,"Jaipur, West Bengal",Severe,Potential Fire,High (>60%),Authentic,89
+1047,Manish Iyer,KA19YZ8881,9975922061,"Kochi, Tamil Nadu",Moderate,No Risk,Low (<20%),Suspicious,30
+1048,Meera Joshi,DL08SJ1275,9864617969,"Lucknow, Kerala",Severe,No Risk,Moderate (20-60%),Authentic,78
+1049,Pooja Patel,GJ10CY8322,9104731444,"Mumbai, West Bengal",Severe,No Risk,High (>60%),Suspicious,54
+1050,Suresh Kumar,DL02XA2585,9776248474,"Mumbai, Kerala",Moderate,Confirmed Fire,Moderate (20-60%),Authentic,78
+1051,Karan Verma,TN10TT6751,9465461175,"Lucknow, Rajasthan",Low,Confirmed Fire,Low (<20%),Suspicious,37
+1052,Anita Chopra,KL01OD9504,9747874531,"Mumbai, Madhya Pradesh",Severe,Potential Fire,High (>60%),Authentic,65
+1053,Meera Sharma,KA14GA3095,9668085668,"Hyderabad, Kerala",Low,Confirmed Fire,High (>60%),Suspicious,58
+1054,Neha Deshmukh,MH20RG7694,9606607478,"Mumbai, Karnataka",Severe,Confirmed Fire,Low (<20%),Authentic,87
+1055,Pooja Iyer,RJ11GR1174,9921563635,"Jaipur, Telangana",Moderate,Confirmed Fire,Moderate (20-60%),Authentic,67
+1056,Priya Deshmukh,DL14OY4409,9870646726,"Surat, Tamil Nadu",Low,Confirmed Fire,High (>60%),Suspicious,58
+1057,Meera Singh,GJ01QE6255,9757802653,"Ahmedabad, Karnataka",Low,Confirmed Fire,Low (<20%),Authentic,51
+1058,Amit Pandey,WB13PP7491,9245489045,"Pune, West Bengal",Severe,No Risk,Low (<20%),Authentic,78
+1059,Vikram Bose,GJ09MT5264,9953755017,"Chennai, West Bengal",Low,Potential Fire,Low (<20%),Authentic,43
+1060,Arjun Pandey,MP13CN9669,9262009678,"Indore, Karnataka",Severe,Potential Fire,Moderate (20-60%),Suspicious,45
+1061,Amit Kumar,MH09ZE3710,9450193067,"Kochi, NCR",Severe,Confirmed Fire,High (>60%),Authentic,78
+1062,Suresh Gupta,MP14NZ2917,9250841790,"Surat, Uttar Pradesh",Moderate,No Risk,Moderate (20-60%),Suspicious,56
+1063,Anita Patel,DL10CT8614,9621490219,"Pune, Rajasthan",Severe,No Risk,Low (<20%),Suspicious,65
+1064,Vikram Pandey,TN01JS6632,9473446760,"Nagpur, Uttar Pradesh",Severe,Potential Fire,High (>60%),Authentic,87
+1065,Meera Gupta,KA12NE2706,9200251483,"Indore, NCR",Moderate,Confirmed Fire,Low (<20%),Authentic,60
+1066,Manish Singh,MH07PF3761,9406059927,"Ahmedabad, Maharashtra",Moderate,Potential Fire,High (>60%),Authentic,73
+1067,Ravi Sharma,KL18KQ2697,9379771375,"Surat, Karnataka",Low,Confirmed Fire,High (>60%),Authentic,72
+1068,Ravi Deshmukh,KA05HF3073,9559096367,"Jaipur, Rajasthan",Moderate,No Risk,Low (<20%),Suspicious,30
+1069,Ravi Verma,MP19ZQ4757,9440809681,"Jaipur, Tamil Nadu",Moderate,Potential Fire,High (>60%),Authentic,73
+1070,Neha Gupta,KL19NS6477,9785428711,"Kolkata, Rajasthan",Severe,No Risk,High (>60%),Suspicious,54
+1071,Karan Sharma,UP07FV9278,9155634103,"Delhi, West Bengal",Low,No Risk,Moderate (20-60%),Authentic,78
+1072,Divya Nair,GJ16SU5416,9552908816,"Bhopal, Maharashtra",Low,Potential Fire,Low (<20%),Suspicious,29
+1073,Vikram Joshi,KL09FV5234,9297856685,"Kochi, Kerala",Severe,Confirmed Fire,Low (<20%),Suspicious,45
+1074,Pooja Chopra,KL10OG7055,9153710779,"Mumbai, West Bengal",Low,Confirmed Fire,Low (<20%),Authentic,51
+1075,Priya Pandey,TN17LJ4624,9679127081,"Kolkata, Karnataka",Moderate,No Risk,High (>60%),Authentic,65
+1076,Priya Verma,WB09HU4729,9705314873,"Bangalore, Rajasthan",Low,Confirmed Fire,Moderate (20-60%),Authentic,87
+1077,Rahul Pandey,WB03OC8311,9604633111,"Surat, Telangana",Low,No Risk,Low (<20%),Suspicious,21
+1078,Amit Patel,WB18DF3725,9575810149,"Mumbai, Gujarat",Moderate,Confirmed Fire,Low (<20%),Suspicious,46
+1079,Ravi Deshmukh,MP12WR6083,9229132198,"Jaipur, Kerala",Severe,No Risk,Moderate (20-60%),Authentic,78
+1080,Ravi Verma,MP09QS4974,9703022156,"Indore, Tamil Nadu",Low,Potential Fire,High (>60%),Authentic,64
+1081,Sneha Reddy,KA16VB6289,9498551701,"Kochi, Kerala",Low,Confirmed Fire,Low (<20%),Suspicious,37
+1082,Meera Sharma,KA15GC4371,9909964403,"Jaipur, Madhya Pradesh",Severe,Potential Fire,High (>60%),Authentic,78
+1083,Neha Yadav,KL09ZQ8397,9118035141,"Delhi, Uttar Pradesh",Moderate,Potential Fire,Moderate (20-60%),Authentic,87
+1084,Karan Pandey,GJ18WQ9984,9878065258,"Ahmedabad, Karnataka",Moderate,Confirmed Fire,High (>60%),Authentic,81
+1085,Divya Joshi,KL18OT7379,9667547766,"Pune, Madhya Pradesh",Severe,No Risk,Low (<20%),Authentic,88
+1086,Neha Bose,MP10NG7161,9197663585,"Indore, West Bengal",Moderate,Confirmed Fire,Low (<20%),Suspicious,46
+1087,Pooja Pandey,GJ14UT5598,9325589849,"Chennai, Rajasthan",Severe,Potential Fire,Moderate (20-60%),Suspicious,40
+1088,Suresh Verma,MH08RR2554,9218143947,"Jaipur, Uttar Pradesh",Low,Potential Fire,Low (<20%),Authentic,43
+1089,Karan Bose,GJ11YG5793,9547741281,"Hyderabad, Maharashtra",Low,No Risk,Moderate (20-60%),Suspicious,56
+1090,Anita Reddy,GJ19QL8357,9192666708,"Nagpur, Madhya Pradesh",Moderate,Potential Fire,Moderate (20-60%),Authentic,79
+1091,Manish Verma,MP01CB3076,9433888433,"Jaipur, NCR",Moderate,Potential Fire,Moderate (20-60%),Authentic,80
+1092,Pooja Reddy,TN09WV8896,9621979653,"Jaipur, Gujarat",Moderate,Potential Fire,Moderate (20-60%),Authentic,81
+1093,Ravi Sharma,RJ18YU9872,9842206046,"Jaipur, Karnataka",Moderate,No Risk,Low (<20%),Suspicious,30
+1094,Meera Pandey,KL06IW4948,9827386057,"Mumbai, Rajasthan",Moderate,No Risk,Moderate (20-60%),Suspicious,45
+1095,Priya Yadav,KL15GS6038,9846976374,"Surat, Uttar Pradesh",Moderate,Potential Fire,Low (<20%),Suspicious,38
+1096,Amit Patel,UP02ZY3380,9245123139,"Surat, Kerala",Moderate,No Risk,Low (<20%),Suspicious,30
+1097,Karan Nair,RJ15QT5042,9285560518,"Delhi, NCR",Moderate,Potential Fire,High (>60%),Suspicious,59
+1098,Sneha Yadav,UP15OB3144,9214335507,"Indore, Tamil Nadu",Moderate,Potential Fire,Moderate (20-60%),Authentic,89
+1099,Pooja Singh,TN20NG7444,9572742269,"Pune, Rajasthan",Moderate,Potential Fire,Low (<20%),Authentic,52
+1100,Karan Iyer,KL20QI7705,9461487091,"Bangalore, Rajasthan",Moderate,Confirmed Fire,Low (<20%),Suspicious,46

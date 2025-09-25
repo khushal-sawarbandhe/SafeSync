@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SafeSync - Insurance Policy Viewer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #6d28d9 0%, #9333ea 50%, #a855f7 100%);
+      min-height: 100vh;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .tab-active {
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      color: #fff;
+      font-weight: bold;
+      transform: scale(1.05);
+      transition: all 0.3s ease;
+    }
+    .tab-inactive {
+      background: rgba(255,255,255,0.2);
+      color: #4b5563;
+    }
+
+    .special-tab {
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(239,68,68,0.5);
+    }
+
+    .detail-item {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 0.6s forwards;
+    }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="flex items-center justify-center p-6">
+
+  <div id="app-container" class="glass-card w-full max-w-3xl p-8 text-center">
+
+    <!-- Login View -->
+    <div id="login-view">
+      <h1 class="text-5xl font-extrabold mb-4 bg-gradient-to-r from-yellow-300 to-pink-500 bg-clip-text text-transparent">
+        SafeSync Login
+      </h1>
+      <p class="text-lg text-yellow-200 mb-6">Enter or search your policy number</p>
+
+      <form id="login-form" class="space-y-6">
+        <div class="relative">
+          <input type="text" id="policy-number" placeholder="e.g., 1005"
+            class="w-full px-4 py-3 rounded-xl outline-none text-purple-900 font-medium bg-white shadow focus:ring-2 focus:ring-purple-400">
+          <ul id="suggestions"
+            class="absolute w-full mt-1 bg-white text-gray-800 rounded-lg shadow-lg max-h-48 overflow-y-auto hidden z-10"></ul>
+        </div>
+        <button type="submit" id="login-button"
+          class="w-full py-3 px-4 rounded-xl font-semibold bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg transition">
+          Login
+        </button>
+      </form>
+
+      <div id="login-message" class="mt-4 text-red-500 font-semibold hidden"></div>
+    </div>
+
+    <!-- Info View -->
+    <div id="info-view" class="hidden">
+
+      <!-- Branding -->
+      <div class="flex items-center justify-center space-x-3 mb-6">
+        <img src="https://img.icons8.com/fluency/96/shield.png" alt="SafeSync Logo" class="w-12 h-12">
+        <h1 class="text-3xl font-extrabold bg-gradient-to-r from-green-300 to-blue-400 bg-clip-text text-transparent">
+          SafeSync Policy Details
+        </h1>
+      </div>
+
+      <p class="text-md text-yellow-100 mb-6">Policy #<span id="policy-number-display" class="font-bold text-white"></span></p>
+
+      <!-- Tabs -->
+      <div class="flex justify-center space-x-3 mb-4">
+        <button id="personal-tab" class="px-6 py-2 rounded-full tab-active">Personal Info</button>
+        <button id="claim-tab" class="px-6 py-2 rounded-full tab-inactive">Claim Info</button>
+      </div>
+
+      <!-- Special Final Tab (smaller centered) -->
+      <div class="mb-6 flex justify-center">
+        <button id="percentage-tab" class="px-6 py-2 rounded-full special-tab w-1/2 text-center">
+          Claim Success %
+        </button>
+      </div>
+
+      <!-- Content Area -->
+      <div id="tab-content" class="space-y-4 text-left"></div>
+
+      <button id="back-button"
+        class="w-full py-3 px-4 mt-6 rounded-xl bg-gradient-to-r from-gray-400 to-gray-600 text-white shadow-lg">
+        Back to Login
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginForm = document.getElementById("login-form");
+      const loginView = document.getElementById("login-view");
+      const infoView = document.getElementById("info-view");
+      const policyNumberInput = document.getElementById("policy-number");
+      const loginMessage = document.getElementById("login-message");
+      const loginButton = document.getElementById("login-button");
+      const backButton = document.getElementById("back-button");
+      const suggestions = document.getElementById("suggestions");
+      const tabContent = document.getElementById("tab-content");
+
+      const tabs = {
+        personal: document.getElementById("personal-tab"),
+        claim: document.getElementById("claim-tab"),
+        percentage: document.getElementById("percentage-tab"),
+      };
+
+      let allPolicies = [];
+      let currentPolicy = null;
+
+      async function loadPolicies() {
+        try {
+          const res = await fetch("http://localhost:3000/policies");
+          allPolicies = await res.json();
+        } catch (err) {
+          console.error("Error fetching policies", err);
+        }
+      }
+      loadPolicies();
+
+      // Suggestions
+      policyNumberInput.addEventListener("input", () => {
+        const query = policyNumberInput.value.toLowerCase();
+        suggestions.innerHTML = "";
+        if (!query) return suggestions.classList.add("hidden");
+
+        const matches = allPolicies.filter(p =>
+          p.Policy_No.toLowerCase().includes(query) ||
+          (p.Name && p.Name.toLowerCase().includes(query))
+        ).slice(0, 8);
+
+        if (!matches.length) return suggestions.classList.add("hidden");
+
+        matches.forEach(p => {
+          const li = document.createElement("li");
+          li.className = "px-4 py-2 cursor-pointer hover:bg-purple-100";
+          li.textContent = `${p.Policy_No} - ${p.Name || "Unknown"}`;
+          li.addEventListener("click", () => {
+            policyNumberInput.value = p.Policy_No;
+            suggestions.classList.add("hidden");
+          });
+          suggestions.appendChild(li);
+        });
+        suggestions.classList.remove("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("#suggestions") && e.target !== policyNumberInput) {
+          suggestions.classList.add("hidden");
+        }
+      });
+
+      // Tab Switching
+      function activateTab(tabName) {
+        Object.keys(tabs).forEach(name => {
+          if (name === tabName) {
+            tabs[name].classList.add("tab-active");
+            if (name === "percentage") tabs[name].classList.add("special-tab");
+            else tabs[name].classList.remove("tab-inactive");
+          } else {
+            tabs[name].classList.remove("tab-active");
+            if (name === "percentage") tabs[name].classList.add("special-tab");
+            else tabs[name].classList.add("tab-inactive");
+          }
+        });
+        renderContent(tabName);
+      }
+
+      function renderContent(tabName) {
+        tabContent.innerHTML = "";
+        if (!currentPolicy) return;
+
+        let fields = [];
+        if (tabName === "personal") fields = ["Name", "Vehicle_No", "Mobile_No", "Address"];
+        if (tabName === "claim") fields = ["Accident_Severity", "Fire_Risk", "Injury_Likelihood", "Claim_Authenticity"];
+        if (tabName === "percentage") fields = ["Claim_Success_Percentage"];
+
+        fields.forEach((key, i) => {
+          if (currentPolicy[key]) {
+            const card = document.createElement("div");
+            card.className = "bg-white rounded-xl p-4 shadow detail-item";
+            card.style.animationDelay = `${i * 0.1}s`;
+            card.innerHTML = `<p class="text-xs uppercase text-gray-500">${key.replace(/_/g," ")}</p>
+                              <p class="mt-1 text-lg font-semibold text-gray-800">${currentPolicy[key]}</p>`;
+            tabContent.appendChild(card);
+          }
+        });
+      }
+
+      // Login
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const policyNumber = policyNumberInput.value.trim();
+        if (!policyNumber) return;
+
+        loginMessage.classList.add("hidden");
+        loginButton.textContent = "Loading...";
+        loginButton.disabled = true;
+
+        try {
+          const response = await fetch(`http://localhost:3000/policy/${policyNumber}`);
+          if (!response.ok) throw new Error("Not found");
+
+          currentPolicy = await response.json();
+          document.getElementById("policy-number-display").textContent = currentPolicy.Policy_No;
+
+          loginView.classList.add("hidden");
+          infoView.classList.remove("hidden");
+
+          activateTab("personal");
+        } catch (err) {
+          loginMessage.textContent = "❌ Policy not found or API error.";
+          loginMessage.classList.remove("hidden");
+        } finally {
+          loginButton.textContent = "Login";
+          loginButton.disabled = false;
+        }
+      });
+
+      backButton.addEventListener("click", () => {
+        policyNumberInput.value = "";
+        infoView.classList.add("hidden");
+        loginView.classList.remove("hidden");
+        currentPolicy = null;
+      });
+
+      // Tab events
+      tabs.personal.addEventListener("click", () => activateTab("personal"));
+      tabs.claim.addEventListener("click", () => activateTab("claim"));
+      tabs.percentage.addEventListener("click", () => activateTab("percentage"));
+    });
+  </script>
+</body>
+</html>

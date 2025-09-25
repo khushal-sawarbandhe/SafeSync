@@ -135,7 +135,8 @@
 
       async function loadPolicies() {
         try {
-          const res = await fetch("http://localhost:3000/policies");
+          // ✅ FIXED for Render: relative path
+          const res = await fetch("/policies");
           allPolicies = await res.json();
         } catch (err) {
           console.error("Error fetching policies", err);
@@ -223,7 +224,8 @@
         loginButton.disabled = true;
 
         try {
-          const response = await fetch(`http://localhost:3000/policy/${policyNumber}`);
+          // ✅ FIXED for Render: relative path
+          const response = await fetch(`/policy/${policyNumber}`);
           if (!response.ok) throw new Error("Not found");
 
           currentPolicy = await response.json();
